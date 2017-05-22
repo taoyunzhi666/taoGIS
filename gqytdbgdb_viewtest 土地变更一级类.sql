@@ -1,5 +1,5 @@
 create or replace view gqytdbgdb_viewtest as
-select "CODE","XZQHMC","YSDM","YSMC","GPMJ","BGMJ","CZ","CZL","CDMJ","JGPY","JTDBGY" from (select to_char('441320000000') code,to_char('惠州市') xzqhmc,  a.ysdm,a.ysmc ,sum(a.gpmj) gpmj,sum(a.bgmj) bgmj,sum(a.gpmj) - sum(a.bgmj) cz ,
+select "CODE","XZQHMC","YSDM","YSMC","GPMJ","BGMJ","CZ","CZL","CDMJ","JGPY","JTDBGY" from (select to_char('441320000000') code,to_char(N'惠州市') xzqhmc,  a.ysdm,a.ysmc ,sum(a.gpmj) gpmj,sum(a.bgmj) bgmj,sum(a.gpmj) - sum(a.bgmj) cz ,
 (sum(a.gpmj) - sum(a.bgmj))/sum(a.gpmj) czl,sum(a.cdmj) cdmj, sum(a.gpmj)-sum (a.cdmj) jgpy,
 sum(a.bgmj)-sum(a.cdmj) jtdbgy
 from tdbg a  group by a.ysmc,a.ysdm
